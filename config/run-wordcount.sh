@@ -10,11 +10,14 @@ echo "Hello Hadoop" >input/file1.txt
 # create input directory on HDFS
 hadoop fs -mkdir -p input
 
+# 输出前先删除output，不管有没有
+hadoop fs -rm -r output
+
 # put input files to HDFS
 hdfs dfs -put ./input/* input
 
 # run wordcount 
-hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/sources/hadoop-mapreduce-examples-2.7.2-sources.jar org.apache.hadoop.examples.WordCount input output
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/sources/hadoop-mapreduce-examples-3.2.1-sources.jar org.apache.hadoop.examples.WordCount input output
 
 # print the input files
 echo -e "\ninput file1.txt:"

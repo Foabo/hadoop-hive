@@ -1,25 +1,24 @@
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 
-MAINTAINER KiwenLau <kiwenlau@gmail.com>
 ADD sources.list /etc/apt/sources.list
-ADD apache-hive-2.1.1-bin.tar.gz /
-ADD mysql-connector-java-5.1.38.jar /
-ADD hadoop-2.7.2.tar.gz /
+ADD apache-hive-3.1.2-bin.tar.gz /
+ADD mysql-connector-java-8.0.18.jar /
+ADD hadoop-3.2.1.tar.gz /
 COPY config/* /tmp/
 
 WORKDIR /root
 
-# install openssh-server, openjdk and wget,install hadoop 2.7.2
+# install openssh-server, openjdk and wget,install hadoop 3.2.1
 RUN apt-get update && \
-    apt-get install -y --reinstall software-properties-common && \
-    add-apt-repository -y ppa:openjdk-r/ppa && \
+    #apt-get install -y --reinstall software-properties-common && \
+    #add-apt-repository -y ppa:openjdk-r/ppa && \
     apt-get update && \
-    apt-get install -y openssh-server openjdk-8-jdk && \
+    apt-get install -y openssh-server openssh-client vim less wget openjdk-8-jdk && \
     apt-get clean all && \
-    mv /hadoop-2.7.2 /usr/local/hadoop && \
-    mv /apache-hive-2.1.1-bin /usr/local/hive && \
-    cp /mysql-connector-java-5.1.38.jar /usr/local/hive/lib/ && \
-    apt-get -y --purge remove software-properties-common
+    mv /hadoop-3.2.1 /usr/local/hadoop && \
+    mv /apache-hive-3.1.2-bin /usr/local/hive && \
+    cp /mysql-connector-java-8.0.18.jar /usr/local/hive/lib/ 
+    #apt-get -y --purge remove software-properties-common
 
 # set environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -47,9 +46,10 @@ RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' && \
     chmod +x ~/run-wordcount.sh && \
     chmod +x $HADOOP_HOME/sbin/start-dfs.sh && \
     chmod +x $HADOOP_HOME/sbin/start-yarn.sh && \
-    /usr/local/hadoop/bin/hdfs namenode -format
-
-# format namenode
+    /usr/local/hadoop/bin/hdfs namenode -format && \
+    rm /usr/local/hive/lib/guava-19.0.jar &&\
+    cp /usr/local/hadoop/share/hadoop/hdfs/lib/guava-27.0-jre.jar /usr/local/hive/lib/
+    # format namenode
 #RUN /usr/local/hadoop/bin/hdfs namenode -format
 
 CMD [ "sh", "-c", "service ssh start; bash"]

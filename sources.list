@@ -1,28 +1,14 @@
-#aliyun
-deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
- 
-#ubuntu 
-deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ trusty-proposed main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ trusty-proposed main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse
- 
-#ubuntu other
-deb http://archive.canonical.com/ubuntu/ trusty partner
-deb http://extras.ubuntu.com/ubuntu/ trusty main
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
 
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
