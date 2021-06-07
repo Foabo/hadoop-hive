@@ -12,7 +12,7 @@
 
 6. hive配置
 
-   
+   项目放在github上https://github.com/Foabo/hadoop-hive
 
 ## 1. 安装docker
 
@@ -101,7 +101,7 @@ $ docker network inspect hadoopnet
 这是我fork别人的一个项目，我自己也写过dockerfile配置hadoop集群，但是人家做的更好，拿过来进行修改了一下，确保能正确运行。
 
 ```shell
-git clone https://github.com/gitbug404/hadoop-hive
+git clone https://github.com/foabo/hadoop-hive
 ```
 
 实际的代码结构如下，克隆下来后，添加一些必须的文件并修改config的配置文件为你自己的实际情况
@@ -194,9 +194,9 @@ Starting nodemanagers
 使用`exit`命令退出docker容器，拷贝hdfs文件到宿主机目录
 
 ```shell
-docker cp hadoop-master:/root/hdfs /Users/inf/github.com.gitbug404/hadoop-hive/data/hadoop-master
-docker cp hadoop-slave1:/root/hdfs /Users/inf/github.com.gitbug404/hadoop-hive/data/hadoop-slave1
-docker cp hadoop-slave2:/root/hdfs /Users/inf/github.com.gitbug404/hadoop-hive/data/hadoop-slave2
+docker cp hadoop-master:/root/hdfs /Users/inf/github.com.foabo/hadoop-hive/data/hadoop-master
+docker cp hadoop-slave1:/root/hdfs /Users/inf/github.com.foabo/hadoop-hive/data/hadoop-slave1
+docker cp hadoop-slave2:/root/hdfs /Users/inf/github.com.foabo/hadoop-hive/data/hadoop-slave2
 ```
 
 复制了这么一些文件过来

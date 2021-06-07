@@ -14,7 +14,7 @@ sudo docker run -itd \
                 -p 9083:9083 \
                 --name hadoop-master \
                 --hostname hadoop-master \
-                -v /Users/inf/github.com.gitbug404/hadoop-hive/data/hadoop-master/hdfs:/root/hdfs \
+                -v /Users/inf/github.com.foabo/hadoop-hive/data/hadoop-master/hdfs:/root/hdfs \
                 hadoop-hive:1 &> /dev/null
 
 
@@ -28,7 +28,7 @@ do
 	                --net=hadoopnet \
 	                --name hadoop-slave$i \
 	                --hostname hadoop-slave$i \
-                    -v /Users/inf/github.com.gitbug404/hadoop-hive/data/hadoop-slave$i/hdfs:/root/hdfs \
+                    -v /Users/inf/github.com.foabo/hadoop-hive/data/hadoop-slave$i/hdfs:/root/hdfs \
 	                hadoop-hive:1 &> /dev/null
 	i=$(( $i + 1 ))
 done 
